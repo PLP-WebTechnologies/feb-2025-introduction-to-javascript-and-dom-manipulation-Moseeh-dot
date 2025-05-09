@@ -1,0 +1,67 @@
+
+1. Dynamically changes text content.
+
+
+2. Modifies CSS styles via JavaScript.
+
+
+3. Adds or removes an element when a button is clicked.
+
+
+
+You can copy this into an HTML file and run it in your browser:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic JS Example</title>
+  <style>
+    #dynamicText {
+      color: blue;
+      font-size: 18px;
+    }
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="dynamicText">Original Text</h1>
+  <button onclick="changeText()">Change Text</button>
+  <button onclick="toggleStyle()">Toggle Highlight</button>
+  <button onclick="toggleElement()">Add/Remove Element</button>
+
+  <div id="container"></div>
+
+  <script>
+    function changeText() {
+      const textEl = document.getElementById('dynamicText');
+      textEl.textContent = "Text has been changed!";
+    }
+
+    function toggleStyle() {
+      const textEl = document.getElementById('dynamicText');
+      textEl.classList.toggle('highlight');
+    }
+
+    function toggleElement() {
+      const container = document.getElementById('container');
+      const existing = document.getElementById('newElement');
+      if (existing) {
+        container.removeChild(existing);
+      } else {
+        const newEl = document.createElement('p');
+        newEl.id = 'newElement';
+        newEl.textContent = 'This is a new element!';
+        container.appendChild(newEl);
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+Would you like a version of this using modern frameworks like React or Vue?
+
